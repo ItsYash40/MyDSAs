@@ -20,7 +20,21 @@ public class SingleLinkList {
             System.out.print(current.data + "--> ");
             current = current.next;
         }
-        System.out.println("No data");
+        System.out.println("Null");
+    }
+
+    public int length() {
+        if (head == null) {
+            return 0;
+        }
+
+        int count = 0;
+        ListNode current = head;
+        while (current != null) {
+            count++;
+            current = current.next;
+        }
+        return count;
     }
 
     public static void main(String[] args) {
@@ -37,6 +51,7 @@ public class SingleLinkList {
         third.next = forth;
 
         sll.Display();
+        System.out.println("The length is " + sll.length());
     }
 
 }
